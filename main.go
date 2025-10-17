@@ -28,6 +28,7 @@ func main() {
 	router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	routes.MainRouter(router)
 	routes.UserRoutes(router)
+	routes.TaskRoutes(router)
 
 	var baseUri = fmt.Sprintf("%v:%v", os.Getenv("BASE_URI"), os.Getenv("PORT"))
 	fmt.Println("Servidor ejecutandose en: " + baseUri)
